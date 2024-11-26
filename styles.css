@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* I hate Arial btw */
+    font-family: 'Arial', sans-serif;
+    background: url('images/herobg.png') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.p {
+    color: #D9D9D9;
+    width: 10px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.ideas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.idea {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.idea:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.idea h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #f1c40f; /* Jasny żółty dla lepszego kontrastu */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.idea-content {
+    margin-top: 15px;
+    display: none;
+    animation: slideDown 0.5s ease forwards;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+
+/* Little formatting for phones B)*/
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
